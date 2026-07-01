@@ -1,0 +1,23 @@
+{
+  "id": "fried-rice",
+  "name": "Fried Rice",
+  "ingredients": [
+    "rice",
+    "eggs",
+    "onion",
+    "garlic",
+    "leeks",
+    "carrots",
+    "corn",
+    ""
+  ],
+  "steps": [
+    "Cook 300 grams of rice with 450ml of water in a pot, try to keep the lid on the pot while cooking.",
+    "Cut the onion, garlic, leeks, and carrots into small pieces.",
+    "Heat a pan with some oil and add the onion, corn, garlic, leeks, and carrots. Fry until soft.",
+    "Add the cooked rice to the pan and stir well.",
+    "Add 4 mixed eggs to the pan and stir until the eggs are cooked.",
+    "Add salt and pepper to taste.",
+    "Serve the fried rice hot."
+  ]
+}

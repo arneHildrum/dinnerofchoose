@@ -1,0 +1,26 @@
+{
+  "id": "breakfast-burrito",
+  "name": "Breakfast Burrito",
+  "ingredients": [
+    "tortilla wrap",
+    "eggs",
+    "fries",
+    "avocado",
+    "sriracha",
+    "salt",
+    "pepper",
+    "lettuce",
+    "leeks",
+    "cheese"
+  ],
+  "steps": [
+    "Smear a quarter of an avocado on the tortilla wrap.",
+    "Add sriracha, salt, and pepper to taste.",
+    "Cook the fries in the air fryer at 150°C for 10 minutes.",
+    "Scramble 2 eggs per wrap and spread them on top of the avocado.",
+    "Cut the lettuce and leeks and add them to the wrap.",
+    "Add the fries on top of the vegetables.",
+    "Add cheese on top of the fries.",
+    "Fold the tortilla into a wrap and enjoy."
+  ]
+}

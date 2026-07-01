@@ -1,0 +1,21 @@
+{
+  "id": "protein-pizza",
+  "name": "Protein Pizza",
+  "ingredients": [
+    "greek yogurt",
+    "cheese",
+    "flour",
+    "pizza sauce",
+    "pepperoni",
+    "red union"
+  ],
+  "steps": [
+    "Preheat the oven to 220°C.",
+    "Mix the flour and greek yogurt to form a dough.",
+    "Roll out the dough and place it on a baking sheet.",
+    "Spread pizza sauce over the dough.",
+    "Add cheese, pepperoni, and sliced red onion on top.",
+    "Bake in the oven for 15-20 minutes or until the crust is golden brown and the cheese is melted.",
+    "Remove from the oven and start slicing and serving."
+  ]
+}
