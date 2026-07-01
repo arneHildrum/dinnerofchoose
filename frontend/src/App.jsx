@@ -14,7 +14,8 @@ function App() {
   const [dishes, setDishes] = useState([]);
   const [randomDish, setRandomDish] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('Search dishes or pick a random meal.');
+  const [message, setMessage] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
 
   useEffect(() => {
     fetchDishes();
@@ -41,6 +42,7 @@ function App() {
       const data = await response.json();
       setDishes(data.dishes || []);
       setRandomDish(null);
+      setHasSearched(true);
       setMessage(data.dishes.length ? '' : 'No dishes found for that query.');
     } catch (error) {
       setMessage('Unable to load dishes. Please check the API.');
@@ -51,8 +53,9 @@ function App() {
   };
 
   const fetchRandomDish = async () => {
+    clearPage();
     setLoading(true);
-    setMessage('Choosing a random dish...');
+    // setMessage('Choosing a random dish...');
     const ingredientsQuery = ingredients.length ? ingredients.join(',') : undefined;
 
     try {
@@ -62,7 +65,7 @@ function App() {
       }
       const data = await response.json();
       setRandomDish(data.dish);
-      setMessage('A delicious random dish is ready.');
+      // setMessage('A delicious random dish is ready.');
     } catch (error) {
       setRandomDish(null);
       setMessage('No random dish matched your ingredient filters.');
@@ -92,12 +95,26 @@ function App() {
     setIngredients([]);
     setIngredientInput('');
     setRandomDish(null);
-    fetchDishes({ search: '', ingredients: '' });
+    setHasSearched(false);
+    setDishes([]);
+    setMessage('');
+  };
+
+  const clearPage = () => {
+    setSearchTerm('');
+    setIngredientInput('');
+    setRandomDish(null);
+    setHasSearched(false);
+    setDishes([]);
+    setMessage('');
   };
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    fetchDishes();
+    fetchDishes({
+      search: searchTerm,
+      ingredients: ingredients.join(','),
+    });
   };
 
   return (
@@ -105,19 +122,19 @@ function App() {
       <header className="hero-panel">
         <div>
           <p className="eyebrow">Dinner of Choose</p>
-          <h1>Find the perfect meal with one click.</h1>
+          <h1>Let us decide for you what to have for dinner</h1>
         </div>
       </header>
 
       <main className="content-grid">
         <section className="controls-card">
           <form onSubmit={handleSearchSubmit} className="search-bar">
-            <label htmlFor="search">Search dishes</label>
+            <label htmlFor="search"></label>
             <input
               id="search"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
-              placeholder="Type dish name or ingredient"
+              placeholder="Search for a specific dish or ingredient"
             />
             <button type="submit" className="primary-button">
               Search
@@ -125,7 +142,7 @@ function App() {
           </form>
 
           <div className="ingredient-filter">
-            <label htmlFor="ingredient">Include ingredient</label>
+            <label htmlFor="ingredient"></label>
             <div className="ingredient-actions">
               <input
                 id="ingredient"
@@ -137,7 +154,7 @@ function App() {
                     addIngredient();
                   }
                 }}
-                placeholder="e.g. tomato, garlic"
+                placeholder="Type ingredient to filter dishes"
               />
               <button type="button" className="secondary-button" onClick={addIngredient}>
                 Add
@@ -156,8 +173,9 @@ function App() {
           )}
 
           <div className="action-row">
+            <div className="row-break" />
             <button type="button" className="primary-button wide" onClick={fetchRandomDish} disabled={loading}>
-              Pick a random dish
+              Get a random dish
             </button>
             <button type="button" className="tertiary-button wide" onClick={clearFilters}>
               Clear filters
@@ -171,10 +189,10 @@ function App() {
 
         {randomDish && (
           <section className="highlight-card">
-            <div className="section-header">
+            {/* <div className="section-header">
               <h2>Random choice</h2>
               <p>This is a randomly selected dish that matches your filters.</p>
-            </div>
+            </div> */}
             <article className="dish-card featured">
               <h3>{randomDish.name}</h3>
               <details>
@@ -189,34 +207,36 @@ function App() {
           </section>
         )}
 
-        <section className="results-card">
-          <div className="section-header">
-            <h2>Available dishes</h2>
-            <p>Results are matched against the search query and selected ingredients.</p>
-          </div>
+        {hasSearched && (
+          <section className="results-card">
+            {/* <div className="section-header">
+              <h2>Available dishes</h2>
+              <p>Results are matched against the search query and selected ingredients.</p>
+            </div> */}
 
-          {dishes.length === 0 && !loading ? (
-            <div className="empty-state">
-              <p>There are no matching dishes. Try a broader search or remove ingredient filters.</p>
-            </div>
-          ) : (
-            <div className="dish-grid">
-              {dishes.map((dish) => (
-                <article key={dish.id} className="dish-card">
-                  <h3>{dish.name}</h3>
-                  <details>
-                    <summary>Ingredients</summary>
-                    <ul>{formatList(dish.ingredients)}</ul>
-                  </details>
-                  <details>
-                    <summary>Cooking steps</summary>
-                    <ol>{formatList(dish.steps)}</ol>
-                  </details>
-                </article>
-              ))}
-            </div>
-          )}
-        </section>
+            {dishes.length === 0 && !loading ? (
+              <div className="empty-state">
+                <p>There are no matching dishes. Try a broader search or remove ingredient filters.</p>
+              </div>
+            ) : (
+              <div className="dish-grid">
+                {dishes.map((dish) => (
+                  <article key={dish.id} className="dish-card">
+                    <h3>{dish.name}</h3>
+                    <details>
+                      <summary>Ingredients</summary>
+                      <ul>{formatList(dish.ingredients)}</ul>
+                    </details>
+                    <details>
+                      <summary>Cooking steps</summary>
+                      <ol>{formatList(dish.steps)}</ol>
+                    </details>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
       </main>
     </div>
   );
