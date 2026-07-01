@@ -1,0 +1,23 @@
+# General
+*.pdf
+
+
+# Node / React
+node_modules/
+.dist/
+build/
+.vite/
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+/.env
+
+# Docker
+**/docker-compose.override.yml
+**/.docker/

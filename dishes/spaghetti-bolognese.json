@@ -1,0 +1,21 @@
+{
+  "id": "spaghetti-bolognese",
+  "name": "Spaghetti Bolognese",
+  "ingredients": [
+    "spaghetti",
+    "ground beef",
+    "tomato sauce",
+    "onion",
+    "garlic",
+    "olive oil",
+    "basil"
+  ],
+  "steps": [
+    "Cook spaghetti according to package instructions.",
+    "Sauté onion and garlic in olive oil until softened.",
+    "Add ground beef and cook until browned.",
+    "Stir in tomato sauce and simmer for 15 minutes.",
+    "Season with salt, pepper, and basil.",
+    "Serve sauce over spaghetti."
+  ]
+}

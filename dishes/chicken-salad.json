@@ -1,0 +1,21 @@
+{
+  "id": "chicken-salad",
+  "name": "Lemon Chicken Salad",
+  "ingredients": [
+    "chicken breast",
+    "lettuce",
+    "cucumber",
+    "cherry tomatoes",
+    "lemon",
+    "olive oil",
+    "salt",
+    "pepper"
+  ],
+  "steps": [
+    "Season chicken and cook until golden brown.",
+    "Slice chicken and set aside to cool.",
+    "Toss lettuce, cucumber, and tomatoes in a bowl.",
+    "Whisk lemon juice, olive oil, salt, and pepper to make dressing.",
+    "Arrange chicken over salad and drizzle with dressing."
+  ]
+}
