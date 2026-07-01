@@ -8,21 +8,21 @@ function formatList(items) {
 }
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [ingredientInput, setIngredientInput] = useState('');
-  const [ingredients, setIngredients] = useState([]);
-  const [dishes, setDishes] = useState([]);
-  const [randomDish, setRandomDish] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
-  const [hasSearched, setHasSearched] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');                                                                                           //  the search term entered by the user
+  const [ingredientInput, setIngredientInput] = useState('');                                                                                 //  the current ingredient input by the user  
+  const [ingredients, setIngredients] = useState([]);                                                                                         //  the list of ingredients entered by the user for filtering dishes
+  const [dishes, setDishes] = useState([]);                                                                                                   //  the list of all dishes fetched from the API
+  const [randomDish, setRandomDish] = useState(null);                                                                                         //  the randomly selected dish from the API
+  const [loading, setLoading] = useState(false);                                                                                              //  indicate if data is being loaded from the API (Loading spinner) 
+  const [message, setMessage] = useState('');                                                                                                 //  status/debug messages for the user
+  const [hasSearched, setHasSearched] = useState(false);                                                                                      //  track if a search has been performed 
 
   useEffect(() => {
-    fetchDishes();
+  //  fetchDishes();                                                                                                                          // Fetch dishes on initial load if needed
   }, []);
 
   const queryString = (params) =>
-    new URLSearchParams(Object.fromEntries(Object.entries(params).filter(([, value]) => value))).toString();
+    new URLSearchParams(Object.fromEntries(Object.entries(params).filter(([, value]) => value))).toString();                                  // Convert an object of parameters into a query string, filtering out empty values
 
   const fetchDishes = async (options = {}) => {
     setLoading(true);
@@ -52,6 +52,10 @@ function App() {
     }
   };
 
+
+  /**
+  * @brief Randomly selects a dish from the available dishes, optionally filtered by ingredients.
+  */
   const fetchRandomDish = async () => {
     clearPage();
     setLoading(true);
@@ -59,7 +63,7 @@ function App() {
     const ingredientsQuery = ingredients.length ? ingredients.join(',') : undefined;
 
     try {
-      const response = await fetch(`${API_ROOT}/random${ingredientsQuery ? `?ingredients=${encodeURIComponent(ingredientsQuery)}` : ''}`);
+      const response = await fetch(`${API_ROOT}/random${ingredientsQuery ? `?ingredients=${encodeURIComponent(ingredientsQuery)}` : ''}`);    // Fetch a random dish from the API, optionally filtered by ingredients
       if (!response.ok) {
         throw new Error('No matching dishes.');
       }
@@ -74,6 +78,10 @@ function App() {
     }
   };
 
+
+  /**
+  * @brief Adds a new ingredient to the filter list if it is not already present.
+  */
   const addIngredient = () => {
     const value = ingredientInput.trim();
     if (!value) return;
@@ -86,10 +94,19 @@ function App() {
     setIngredientInput('');
   };
 
+
+  /**
+  * @brief Removes an ingredient from the filter list.
+  * @param {number} index - The index of the ingredient to remove.
+  */
   const removeIngredient = (index) => {
     setIngredients((current) => current.filter((_, itemIndex) => itemIndex !== index));
   };
 
+
+  /**
+  * @brief Clears all filter criteria.
+  */
   const clearFilters = () => {
     setSearchTerm('');
     setIngredients([]);
@@ -100,6 +117,10 @@ function App() {
     setMessage('');
   };
 
+
+  /**
+  * @brief Clearing the page without removing the filters
+  */
   const clearPage = () => {
     setSearchTerm('');
     setIngredientInput('');
@@ -109,6 +130,11 @@ function App() {
     setMessage('');
   };
 
+
+  /**
+  * @brief Handles the submission of the search form.
+  * @param {React.SyntheticEvent<HTMLFormElement>} event - The form submission event.
+  */
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     fetchDishes({
@@ -118,7 +144,7 @@ function App() {
   };
 
   return (
-    <div className="app-shell">
+    <div className="app-shell">                                                                                                               
       <header className="hero-panel">
         <div>
           <p className="eyebrow">Dinner of Choose</p>
@@ -126,7 +152,7 @@ function App() {
         </div>
       </header>
 
-      <main className="content-grid">
+      <main className="content-grid">                                                                                                         // Main grid formatting search and result placement
         <section className="controls-card">
           <form onSubmit={handleSearchSubmit} className="search-bar">
             <label htmlFor="search"></label>
@@ -188,12 +214,12 @@ function App() {
         </section>
 
         {randomDish && (
-          <section className="highlight-card">
+          <section className="results-card">
             {/* <div className="section-header">
               <h2>Random choice</h2>
               <p>This is a randomly selected dish that matches your filters.</p>
             </div> */}
-            <article className="dish-card featured">
+            <article className="dish-card">
               <h3>{randomDish.name}</h3>
               <details>
                 <summary>Ingredients</summary>
