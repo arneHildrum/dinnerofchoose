@@ -1,0 +1,21 @@
+{
+  "id": "bacon-cheeseburger",
+  "name": "Bacon Cheeseburger",
+  "ingredients": [
+    "beef patty",
+    "bun",
+    "lettuce",
+    "bacon",
+    "cheese",
+    "Chili mayo"
+  ],
+  "steps": [
+    "Add butter to a pan and heat it up.",
+    "Add the buns to the pan and toast them until golden brown.",
+    "Start building the burger by adding the lettuce on the bottom, and the chili mayo on the top bun.",
+    "Add the beef patty to the pan and cook it through. Toast the bacon at the same time if there is room in the pan.",
+    "After flipping the beef patty, add the cheese on top and let it melt.",
+    "Assemble the burger by adding the beef patty with melted cheese on top of the lettuce, and then add the bacon on top of the beef patty.",
+    "Place the top bun with chili mayo on top of the bacon and serve."
+  ]
+}

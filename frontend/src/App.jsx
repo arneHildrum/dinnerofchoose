@@ -152,7 +152,7 @@ function App() {
         </div>
       </header>
 
-      <main className="content-grid">                                                                                                         // Main grid formatting search and result placement
+      <main className="content-grid">                                                                                                        
         <section className="controls-card">
           <form onSubmit={handleSearchSubmit} className="search-bar">
             <label htmlFor="search"></label>

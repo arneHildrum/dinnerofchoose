@@ -15,11 +15,34 @@ A React frontend and Python backend web application for choosing dishes by searc
 
 - Node.js 22.x
 - Python 3.13.x
-- Docker and Docker Compose
+- Docker and Docker Compose (Running on other platforms should be added later)
 
-## Run locally with Docker
+
+## Installation on linux
 
 ```bash
+# Prerequsite: Installed docker, for help see https://docs.docker.com/engine/install/ubuntu/
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt install python3
+
+sudo apt install ca-certificates curl gnupg
+# If the folder does not already exist, run: sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=22 # Switch to 24 if the latest TLS version is desired
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt update
+sudo apt install nodejs
+node --version
+npm --version
+sudo apt install build-essential
+sudo apt update
+
+# Prerequisite: able to clone by using ssh: for help see https://phoenixnap.com/kb/git-clone-ssh
+git clone git@github.com:arneHildrum/dinnerofchoose.git
+cd dinnerofchoose
 docker compose up --build
 ```
 
