@@ -19,6 +19,7 @@ export default defineConfig({
 
   preview: {
     host: '0.0.0.0',
+    allowedHosts: ['dinnerofchoose'],
     port: 4173,
     strictPort: true,
     proxy: apiProxy,
