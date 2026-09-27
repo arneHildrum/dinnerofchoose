@@ -1,0 +1,20 @@
+{
+  "id": "lunch-burrito",
+  "name": "Lunch Burrito",
+  "ingredients": [
+    "ground beef",
+    "tortillas",
+    "eggs",
+    "egg whites",
+    "cheese",
+    "chili mayo"
+  ],
+  "steps": [
+    "Create chili mayo by mixing together mayonnaise, siracha, honey, and lemon juice in a small bowl.",
+    "Add the ground beef to a pan and cook until fully browned. Drain any excess fat and season with salt, pepper, and your choice of spices (such as cumin, chili powder, or paprika).",
+    "While the beef is cooking, scramble the eggs and egg whites. When the ground beef is done, add the scrambled eggs to the pan, lower the heat, and mix them together until the eggs are cooked to your liking.",
+    "Layer the chili mayo where the tortilla will be folded, then add the cooked beef and eggs, and top with cheese.",
+    "Fold the top and bottom in, fold one side over the ingredients, and roll it up.",
+    "Heat a pan over medium heat and place the burrito seam side down. Cook for 1-2 minutes on each side until the tortilla is golden brown and crispy."
+  ]
+}

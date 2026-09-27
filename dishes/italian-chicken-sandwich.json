@@ -1,0 +1,25 @@
+{
+  "id": "Italian-chicken-sandwich",
+  "name": "Italian Chicken Sandwich",
+  "ingredients": [
+    "chicken breast",
+    "sourdough bread",
+    "romaine lettuce",
+    "sundried tomato",
+    "red onion",
+    "mozzarella cheese",
+    "gouda cheese",
+    "jalapeno",
+    "dijon mustard",
+    "red wine vinegar"
+  ],
+  "steps": [
+    "Slice two slices of sourdough bread and toast them until golden brown.",
+    "Spice the chicken breast with salt, pepper, garlic, paprika and Italian seasoning. Cook the chicken breast in a pan until fully cooked and golden brown on both sides. You can also air fry at 200°C for 15 minutes or until fully cooked, or bake in the oven at 200°C for 20 minutes.",
+    "Slice the cooked chicken breast into thin slices.",
+    "Slice the romaine lettuce, red onion, jalapeno, and sundried tomato into thin slices.",
+    "Chopp the mozzarella and gouda cheese into small pieces.",
+    "In a small bowl, mix together the chicken, vegetables, and cheese. Add a drizzle of dijon mustard and red wine vinegar to the mixture and toss until everything is evenly coated.",
+    "Assemble the sandwich by placing the chicken mixture on one slice of toasted sourdough bread, and then top it with the other slice of bread."
+  ]
+}

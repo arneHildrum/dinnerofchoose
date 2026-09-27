@@ -1,0 +1,19 @@
+{
+  "id": "dinner-burrito",
+  "name": "Dinner Burrito",
+  "ingredients": [
+    "ground beef",
+    "tortillas",
+    "rice",
+    "black beans",
+    "cheese",
+    "salsa",
+    "avocado"
+  ],
+  "steps": [
+    "Cook the ground beef in a skillet until fully browned. Drain any excess fat and season with salt, pepper, and your choice of spices (such as cumin, chili powder, or paprika).",
+    "Cook the rice with a 2:3 ratio of rice to water, and let it simmer until the water is absorbed (maybe 8 minutes or so). Add the black beans to the rice and mix well.",
+    "Layer the cooked beef, rice, black beans, cheese, salsa, and avocado in each tortilla.",
+    "Fold the sides of the tortilla over the filling and roll it up."
+  ]
+}

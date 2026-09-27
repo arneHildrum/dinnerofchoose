@@ -1,0 +1,18 @@
+{
+  "id": "chicken-tenders",
+  "name": "Chicken Tenders",
+  "ingredients": [
+    "chicken breast",
+    "flour",
+    "eggs",
+    "panko breadcrumbs",
+    "cornflakes"
+  ],
+  "steps": [
+    "Slice the chicken breast into strips.",
+    "Set up a breading station with three bowls: one with flour and spices (smoked paprika, garlic powder, onion powder, salt, pepper), one with a beaten egg, and one with a mixture of panko breadcrumbs and crushed cornflakes.",
+    "Dredge each chicken strip in the flour mixture, then dip it into the beaten egg, and finally coat it with the breadcrumb mixture.",
+    "Air fry the chicken tenders at 200°C for 10-12 minutes, flipping halfway through, until golden brown and cooked through. Alternatively, bake in the oven at 200°C for 15-20 minutes or until fully cooked.",
+    "To honey glaze the tenders, mix 80g of siracha, 60g of honey, and 15ml of lemon juice in a small saucepan. Heat over medium heat until the mixture is well combined and slightly thickened. Coat the cooked chicken tenders with the honey glaze before serving."
+  ]
+}
