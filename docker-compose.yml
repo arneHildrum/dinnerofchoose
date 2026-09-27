@@ -6,8 +6,8 @@ services:
       context: ./backend
     volumes:
       - ./dishes:/app/dishes:ro
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
     environment:
       - PYTHONUNBUFFERED=1
 
@@ -16,7 +16,7 @@ services:
       context: ./frontend
     ports:
       - "4173:4173"
-    environment:
-      - VITE_API_BASE_URL=http://localhost:5000
+#    environment:
+#      - VITE_API_BASE_URL=http://localhost:5000
     depends_on:
       - backend

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
-const API_ROOT = `${API_BASE_URL}/api`;
-
+// const API_ROOT = `${API_BASE_URL}/api`;
+const API_ROOT = '/api';
 function formatList(items) {
   return items.map((item, index) => <li key={index}>{item}</li>);
 }
