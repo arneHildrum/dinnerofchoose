@@ -2,8 +2,8 @@
   "id": "chili-pot",
   "name": "Chili Pot",
   "ingredients": [
-   "minced beef",
-   "onion",
+    "minced beef",
+    "onion",
     "canned tomatoes",
     "kidney beans",
     "Tomato paste",
@@ -13,7 +13,6 @@
     "salt",
     "pepper",
     "cheese",
-    "chili mayo",
     "tortillas"
   ],
   "steps": [
@@ -22,6 +21,6 @@
     "Add the minced beef and cook until browned.",
     "Add the canned tomatoes, kidney beans, tomato paste, chili powder, cumin, salt, and pepper to the pot.",
     "Simmer and stir the chili until you loose patience.",
-    "Serve the chili in bowls, topped with cheese and a dollop of chili mayo, and with tortillas on the side."
+    "Serve the chili in bowls, topped with cheese, alternatively with sour cream and with tortillas on the side."
   ]
 }
